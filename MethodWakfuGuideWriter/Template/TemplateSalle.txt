@@ -1,0 +1,23 @@
+﻿
+<!-- wp:heading {"level":3} -->
+<h3><strong>2.1 - </strong>Num_Salle</h3>
+<!-- /wp:heading -->
+
+<!-- wp:html -->
+<figure class="wp-block-image diapo1"><img src="URL_SANS_VUE_TACTIQUE" alt=""><figcaption><strong>Composition :&nbsp;</strong>Xx NomDuMonstre, Xx NomDuMonstre, Xx NomDuMonstre</figcaption></figure>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<script>
+    document.getElementsByClassName("diapo1")[0].firstChild.onmouseenter = function() {
+        document.getElementsByClassName("diapo1")[0].firstChild.src= "URL_AVEC_VUE_TACTIQUE"; // Image de la salle avec vue tactique
+    };
+    document.getElementsByClassName("diapo1")[0].firstChild.onmouseout = function() {
+        document.getElementsByClassName("diapo1")[0].firstChild.src = "URL_SANS_VUE_TACTIQUE"; // Image de la salle sans vue tactique
+    };
+</script>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->

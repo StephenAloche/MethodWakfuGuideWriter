@@ -1,0 +1,237 @@
+﻿<!-- wp:paragraph -->
+<p><em>Astuce : Le NOM_DU_DONJON se trouve<strong> ZONE_PRECISE</strong>, au POINT_CARDINAL de ZONE_PRINCIPALE.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":9182,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png" class="wp-image-9182"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading -->
+<h2><strong>1 – LES MONSTRES</strong></h2>
+<!-- /wp:heading -->
+
+[TemplateMonstre]
+
+
+<!-- wp:heading -->
+<h2><strong>2 – DONJON</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":9182,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png" class="wp-image-9182"/><figcaption><strong>L’entrée du donjon</strong></figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+[TemplateSalle]
+
+
+<!-- wp:heading -->
+<h2><strong>3 – STRATÉGIE</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3>3.1 - Partie 1</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":3} -->
+<h3>3.2 - Partie 2</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading -->
+<h2>4 - EFFETS STASIS</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>À partir des paliers Stasis 31 et 41, les monstres des donjons ainsi que les boss voient leur fonctionnement modifié de part l'ajout de <strong>nouvelles mécaniques</strong> ce qui permet de débloquer certaines récompenses. Plus d'informations sur le système de Stasis et son fonctionnement dans notre <a rel="noreferrer noopener" href="https://methodwakfu.com/donjons-et-boss-ultimes/features-de-donjons/gameplay-stasis/" target="_blank"><strong>guide dédié</strong></a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":3} -->
+<h3>4.1 - Stasis 31</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4>4.1.1 - Effets des monstres</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"right","id":6243,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/effet_stasis.png" alt="" class="wp-image-6243"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="clear: both; margin-bottom: 20px;">&nbsp;</div>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":4} -->
+<h4>4.1.2 - Effets du Boss</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"right","id":6243,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/effet_stasis.png" alt="" class="wp-image-6243"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="clear: both; margin-bottom: 20px;">&nbsp;</div>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":3} -->
+<h3>4.2 - Stasis 41</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4>4.2.1 - Effets des monstres</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"right","id":6243,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/effet_stasis.png" alt="" class="wp-image-6243"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="clear: both; margin-bottom: 20px;">&nbsp;</div>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":4} -->
+<h4>4.2.2 - Effets du Boss</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"right","id":6243,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/effet_stasis.png" alt="" class="wp-image-6243"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="clear: both; margin-bottom: 20px;">&nbsp;</div>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading -->
+<h2><strong>5 – STÈLES</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Plus d'infos sur les stèles et leur fonctionnement <a href="https://methodwakfu.com/donjons-et-boss-ultimes/features-de-donjons/les-steles-de-donjons/" target="_blank" rel="noreferrer noopener"><strong>ici</strong></a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Une stèle ou plus :</strong> <a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank">NOM_DE_SUBLIMATION</a></li><li><strong>Deux stèles ou plus :</strong> <a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank"></a><a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank">NOM_DE_SUBLIMATION</a></li><li><strong>Trois stèles :</strong> <a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank"></a><a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank">NOM_DE_SUBLIMATION</a></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><span style="color:#0366f9" class="has-inline-color"><strong><strong>Stèle 1 : NOM_DE_STELE</strong></strong><br></span>EFFET_DE_STELE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><span style="color:#08bc07" class="has-inline-color"><strong>Stèle 2 : NOM_DE_STELE</strong><br></span>EFFET_DE_STELE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><span style="color:#fa0202" class="has-inline-color"><strong>Stèle 3 : NOM_DE_STELE</strong><br></span>EFFET_DE_STELE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading -->
+<h2><strong>5 – DROPS</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":3} -->
+<h3><strong>5.1 - </strong>Drops du Donjon</h3>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":6247,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><a href="https://www.wakfu.com/fr/mmorpg/encyclopedie/monstres/MONSTRE" target="_blank" rel="noopener"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/drop_donjon_base.png" alt="" class="wp-image-6247"/></a><figcaption><strong><a href="https://www.wakfu.com/fr/mmorpg/encyclopedie/monstres/MONSTRE" target="_blank" rel="noreferrer noopener">Lien direct</a></strong></figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":3} -->
+<h3><strong>5.2 - </strong>Drops sur le Boss</h3>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":6248,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><a href="https://www.wakfu.com/fr/mmorpg/encyclopedie/monstres/BOSS" target="_blank" rel="noopener"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/drop_boss_base.png" alt="" class="wp-image-6248"/></a><figcaption><strong><a href="https://www.wakfu.com/fr/mmorpg/encyclopedie/monstres/BOSS" target="_blank" rel="noreferrer noopener">Lien direct</a></strong></figcaption></figure>
+<!-- /wp:image -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading -->
+<h2><strong>6 – CROUPIER</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:image {"id":6253,"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/croupier_base-1.png" alt="" class="wp-image-6253"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading -->
+<h2><strong>7 – EXPLOITS</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul><li><strong>NOM_DE_L_EXPLOIT I :</strong>  Terminer le Donjon « NOM_DU_DONJON »<br><em><strong>Récompense :</strong> 5 Jetons <em>TRANCHE_DE_NIVEAU</em>.</em></li><li><strong>NOM_DE_L_EXPLOIT&nbsp;II :</strong> Vaincre le boss en premier<br><em><strong>Récompense :</strong> 5 Jetons <em>TRANCHE_DE_NIVEAU</em>.</em></li><li><strong>NOM_DE_L_EXPLOIT III&nbsp;:</strong> Vaincre le boss en dernier<br><strong><em>Récompense :</em></strong><em> 5 Jetons TRANCHE_DE_NIVEAU.</em></li><li><strong>NOM_DE_L_EXPLOIT &nbsp;– Final :</strong> Terminer <strong>NOM_DE_L_EXPLOIT I</strong>, <strong>II </strong>et <strong>III</strong><br><em><strong>Récompenses :</strong> Miniature de NOM_DU_BOSS + 5 Jetons <em>TRANCHE_DE_NIVEAU</em>.</em></li></ul>
+<!-- /wp:list -->
