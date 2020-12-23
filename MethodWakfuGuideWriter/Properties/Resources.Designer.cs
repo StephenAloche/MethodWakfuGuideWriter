@@ -66,14 +66,15 @@ namespace MethodWakfuGuideWriter.Properties {
         ///&lt;!-- /wp:paragraph --&gt;
         ///
         ///&lt;!-- wp:image {&quot;id&quot;:9182,&quot;sizeSlug&quot;:&quot;large&quot;} --&gt;
-        ///&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;img src=&quot;https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png&quot; alt=&quot;&quot; class=&quot;wp-image-9182&quot;/&gt;&lt;/figure&gt;
+        ///&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;img src=&quot;https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png&quot; class=&quot;wp-image-9182&quot;/&gt;&lt;/figure&gt;
         ///&lt;!-- /wp:image --&gt;
         ///
         ///&lt;!-- wp:separator --&gt;
         ///&lt;hr class=&quot;wp-block-separator&quot;/&gt;
         ///&lt;!-- /wp:separator --&gt;
         ///
-        ///&lt;!-- wp:paragrap [le reste de la chaîne a été tronqué]&quot;;.
+        ///&lt;!-- wp:heading --&gt;
+        ///&lt;h [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         public static string TemplateGlobal {
             get {
@@ -83,7 +84,7 @@ namespace MethodWakfuGuideWriter.Properties {
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à &lt;!-- wp:list --&gt;
-        ///&lt;ul&gt;&lt;li&gt;« &lt;strong&gt;NomDuSort&lt;/strong&gt; » : Sort monocible (X-X PO [modifiable] [condition : en ligne/en diagonale] [sans ligne de vue]), pour X PA. Inflige des [lourds] dégâts &lt;strong&gt;&lt;span style=&quot;color:#CODE_HEXA&quot;&gt;ELEM&lt;/span&gt;&lt;/strong&gt;et EFFETS. [Limité à X/cible et à X/tour. &lt;strong&gt;OU&lt;/strong&gt; X tours de relance.]&lt;/li&gt;&lt;/ul&gt;
+        ///&lt;ul&gt;&lt;li&gt;« &lt;strong&gt;NomDuSort&lt;/strong&gt; » : Sort monocible (X-X PO [modifiable] [condition : en ligne/en diagonale] [sans ligne de vue]), pour X PA. Inflige des [lourds] dégâts &lt;strong&gt;&lt;span style=&quot;color:#CODE_HEXA&quot;&gt;ELEM&lt;/span&gt;&lt;/strong&gt; et EFFETS. [Limité à X/cible et à X/tour. &lt;strong&gt;OU&lt;/strong&gt; X tours de relance.]&lt;/li&gt;&lt;/ul&gt;
         ///&lt;!-- /wp:list --&gt;.
         /// </summary>
         public static string TemplateMono {
@@ -98,15 +99,37 @@ namespace MethodWakfuGuideWriter.Properties {
         ///&lt;h3&gt;&lt;strong&gt;Num_Monstre - &lt;/strong&gt;Nom_du_Monstre&lt;/h3&gt;
         ///&lt;!-- /wp:heading --&gt;
         ///
+        ///&lt;!-- wp:html --&gt;
         ///&lt;div style=&quot;max-width:35%;float:right; margin-left:10px;text-align:center;&quot;&gt;&lt;img src=&quot;https://methodwakfu.com/wp-content/uploads/2020/06/fiche_monstre.png&quot;&gt;
         ///&lt;div style&quot;clear:both;&quot;=&quot;&quot;&gt;&lt;/div&gt;&lt;img src=&quot;https://methodwakfu.com/wp-content/uploads/2020/06/achetype_base.png&quot;&gt;&lt;/div&gt;
+        ///&lt;!-- /wp:html --&gt;
         ///
         ///&lt;!-- wp:paragraph --&gt;
-        ///&lt;p&gt;Il possède XXX sorts, XXX passifs et sa plus basse résistance est l&apos;élément &lt;strong&gt;ELEM &lt; [le reste de la chaîne a été tronqué]&quot;;.
+        ///&lt;p&gt;Il possède XXX sorts, XXX passifs et sa plus basse ré [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         public static string TemplateMonstre {
             get {
                 return ResourceManager.GetString("TemplateMonstre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à &lt;!-- wp:html --&gt;
+        ///&lt;ul&gt;
+        ///&lt;li&gt;
+        ///« &lt;strong&gt;NomDuPassifouEtat&lt;/strong&gt; » (passif) :&lt;/br&gt;
+        ///DECLENCHEMENT :&lt;/br&gt;
+        ///&lt;ul&gt;
+        ///&lt;li&gt;EFFETS&lt;/li&gt;
+        ///&lt;li&gt;EFFETS&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///&lt;/li&gt;
+        ///&lt;/ul&gt;
+        ///&lt;!-- /wp:html --&gt;.
+        /// </summary>
+        public static string TemplatePassif {
+            get {
+                return ResourceManager.GetString("TemplatePassif", resourceCulture);
             }
         }
         

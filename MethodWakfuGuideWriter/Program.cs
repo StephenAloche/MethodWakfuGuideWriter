@@ -133,11 +133,11 @@ namespace MethodWakfuGuideWriter
             if (monstre.Boss)
             {
                 sbMonstre.Replace("Nom_du_Monstre", monstre.Nom + " (Boss)");
-                //suppression de l'image d'archetype
             }
             else
             {
                 sbMonstre.Replace("Nom_du_Monstre", monstre.Nom);
+                //suppression de l'image d'archetype
                 sbMonstre.Replace("https://methodwakfu.com/wp-content/uploads/2020/06/achetype_base.png", "");
             }
             sbMonstre.Replace("Num_Monstre", "2." + num);
@@ -191,14 +191,17 @@ namespace MethodWakfuGuideWriter
 
             string partieMono = Properties.Resources.TemplateMono;
             string partieZone = Properties.Resources.TemplateZone;
+            string partiePassif = Properties.Resources.TemplatePassif;
 
             if (sort.Passif || sort.Etat)
             {
                 sbSort.Replace("[TemplateMono]", "");
                 sbSort.Replace("[TemplateZone]", "");
+                sbSort.Replace("[TemplatePassif]", partiePassif);
 
                 sbSort.Replace("NomDuPassifouEtat", sort.Nom);
                 sbSort.Replace("passif", $"{(sort.Passif ? "passif" : "état")}");
+                sbSort.Replace("EFFETS", sort.Effets);
 
                 return sbSort.ToString();
             }
@@ -207,6 +210,7 @@ namespace MethodWakfuGuideWriter
             if (sort.Zone)
             {
                 sbSort.Replace("[TemplateMono]", "");
+                sbSort.Replace("[TemplatePassif]", "");
                 sbSort.Replace("[TemplateZone]", partieZone);
 
                 sbSort.Replace("[sur cible] [condition : en ligne/en diagonale] [sans ligne de vue], X-X PO [modifiable]", sort.PO);
@@ -217,6 +221,7 @@ namespace MethodWakfuGuideWriter
             else // monocible
             {
                 sbSort.Replace("[TemplateZone]", "");
+                sbSort.Replace("[TemplatePassif]", "");
                 sbSort.Replace("[TemplateMono]", partieMono);
                 sbSort.Replace("X-X PO [modifiable] [condition : en ligne/en diagonale] [sans ligne de vue]", sort.PO);
             }

@@ -3,8 +3,10 @@
 <h3><strong>Num_Monstre - </strong>Nom_du_Monstre</h3>
 <!-- /wp:heading -->
 
-<div style="max-width:35%;float:right; margin-left:10px;text-align:center;"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/fiche_monstre.png">
+<!-- wp:html -->
+<div style="max-width:35%;float:right; margin-left:10px;text-align:center;"><img src="https://methodwakfu.com/wp-content/uploads/2020/12/PerlouzeNoire_Quartier-maitre.png">
 <div style"clear:both;"=""></div><img src="https://methodwakfu.com/wp-content/uploads/2020/06/achetype_base.png"></div>
+<!-- /wp:html -->
 
 <!-- wp:paragraph -->
 <p>Il possède XXX sorts, XXX passifs et sa plus basse résistance est l'élément <strong>ELEM </strong>[OU] ses plus basses résistances sont les éléments <strong>ELEM </strong>et <strong>ELEM </strong>:</p>

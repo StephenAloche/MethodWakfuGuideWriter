@@ -127,6 +127,9 @@
   <data name="TemplateMonstre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Template\TemplateMonstre.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="TemplatePassif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Template\TemplatePassif.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="TemplateSalle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Template\TemplateSalle.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

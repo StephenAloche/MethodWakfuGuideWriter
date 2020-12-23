@@ -2,15 +2,4 @@
 
 [TemplateZone]
 
-<!-- wp:html -->
-<ul>
-<li>
-« <strong>NomDuPassifouEtat</strong> » (passif) :</br>
-DECLENCHEMENT :</br>
-<ul>
-<li>EFFETS</li>
-<li>EFFETS</li>
-</ul>
-</li>
-</ul>
-<!-- /wp:html -->
+[TemplatePassif]
