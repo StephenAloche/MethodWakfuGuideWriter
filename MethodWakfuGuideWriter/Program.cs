@@ -11,11 +11,20 @@ namespace MethodWakfuGuideWriter
 {
     class Program
     {
+        public static string DateFile { get; set; }
+        public static string UrlFile { get; set; }
+        public static TemplateDonjon DonjonData { get; set; }
+
         static void Main(string[] args)
         {
             if (args.Length == 0)
                 return; // return if no file was dragged onto exe
             var assembly = Assembly.GetExecutingAssembly();
+
+            try
+            {
+
+            DateFile = DateTime.Now.ToString("yyyy/MM");
 
             //check l'extension
             string textJson = File.ReadAllText(args[0]);
@@ -24,30 +33,25 @@ namespace MethodWakfuGuideWriter
             sbGlobal.Append(templateGlobal);
 
             //Exctraction des données Json.
-            TemplateDonjon donjonData = JsonConvert.DeserializeObject<TemplateDonjon>(textJson);
+            DonjonData = JsonConvert.DeserializeObject<TemplateDonjon>(textJson);
+            UrlFile = $"/wp-content/uploads/{DateFile}/{DonjonData.NomDonjonUrl}";
 
             //Remplissage du template
-            string nomDuDonjon = donjonData.Nom;
+            string nomDuDonjon = DonjonData.Nom;
             sbGlobal.Replace("NOM_DU_DONJON", nomDuDonjon);
-            sbGlobal.Replace("ZONE_PRECISE", donjonData.ZonePrecise);
-            sbGlobal.Replace("ZONE_PRINCIPALE", donjonData.ZonePrincipale);
+            sbGlobal.Replace("ZONE_PRECISE", DonjonData.ZonePrecise);
+            sbGlobal.Replace("ZONE_PRINCIPALE", DonjonData.ZonePrincipale);
 
             string urlMapDonjon = "https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png";
-            if (!String.IsNullOrEmpty(donjonData.UrlImageMap))
-            {
-                sbGlobal.Replace(urlMapDonjon.Replace("\\", ""), donjonData.UrlImageMap);
-            }
+            sbGlobal.Replace(urlMapDonjon.Replace("\\", ""), $"{UrlFile}_map.png");
 
             string urlEntreeDonjon = "https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png";
-            if (!String.IsNullOrEmpty(donjonData.UrlImageEntree))
-            {
-                sbGlobal.Replace(urlEntreeDonjon, donjonData.UrlImageEntree);
-            }
+            sbGlobal.Replace(urlEntreeDonjon.Replace("\\", ""), $"{UrlFile}_map.png");
 
             //partie monstre
             StringBuilder sbMonstre = new StringBuilder();
             int i = 1; //increment de numerotation dans le template
-            foreach (Monstre monstre in donjonData.Monstres)
+            foreach (Monstre monstre in DonjonData.Monstres)
             {
                 //l'ajout des sorts se fait lors de la création du monstre
                 string monstreString = CreateMonstre(monstre, i);
@@ -61,7 +65,7 @@ namespace MethodWakfuGuideWriter
 
             StringBuilder sbSalle = new StringBuilder();
             i = 1; //increment de numerotation dans le template            
-            foreach (Salle Salle in donjonData.Donjon.Salles)
+            foreach (Salle Salle in DonjonData.Donjon.Salles)
             {
                 string SalleString = CreateSalle(Salle, i);
                 sbSalle.Append(SalleString);
@@ -74,8 +78,8 @@ namespace MethodWakfuGuideWriter
             //partie Drop
             //partie Croupier
             //partie Exploit
-            sbGlobal.Replace("NOM_DE_L_EXPLOIT", donjonData.Exploit.Nom);
-            sbGlobal.Replace("TRANCHE_DE_NIVEAU", donjonData.Exploit.TypeJetons);
+            sbGlobal.Replace("NOM_DE_L_EXPLOIT", DonjonData.Exploit.Nom);
+            sbGlobal.Replace("TRANCHE_DE_NIVEAU", DonjonData.Exploit.TypeJetons);
 
             //traitement post écriture
             ProcessPostEcriture(sbGlobal);
@@ -85,6 +89,12 @@ namespace MethodWakfuGuideWriter
                + Path.DirectorySeparatorChar
                + nomDuDonjon + ".txt";
             File.WriteAllText(path, sbGlobal.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadKey();
+            }
         }
 
         /// <summary>
@@ -125,7 +135,7 @@ namespace MethodWakfuGuideWriter
                     color = "#F9CE43";
                     break;
                 default:
-                    color = " #98AE40";
+                    color = " #F9CE43";
                     break;
             }
             return color;
@@ -151,13 +161,29 @@ namespace MethodWakfuGuideWriter
             {
                 sbMonstre.Replace("Nom_du_Monstre", monstre.Nom);
                 //suppression de l'image d'archetype
-                sbMonstre.Replace("https://methodwakfu.com/wp-content/uploads/2020/06/achetype_base.png", "");
+                string urlArchetype = "";
+                switch (monstre.Archetype?.ToLower())
+                {
+                    case "melee":
+                    case "melée":
+                        urlArchetype = "/wp-content/uploads/2019/04/melee_archetype.png";
+                        break;
+                    case "tank":
+                        urlArchetype = "/wp-content/uploads/2019/03/tank_archetype.png";
+                        break;
+                    case "invocateur":
+                        urlArchetype = "/wp-content/uploads/2019/03/invocateur_archetype.png";
+                        break;
+                    default:
+                        break;
+                }
+                sbMonstre.Replace("https://methodwakfu.com/wp-content/uploads/2020/06/achetype_base.png", urlArchetype);
 
                 sbMonstre = new StringBuilder(Regex.Replace(sbMonstre.ToString(), @"<!-- TemplateBoss(.+\n)+-->", ""));
             }
             sbMonstre.Replace("Num_Monstre", "2." + num);
 
-            sbMonstre.Replace(defaultSrc, monstre.UrlImage);
+            sbMonstre.Replace(defaultSrc, $"{UrlFile}_{monstre.Nom}.png");
 
             int NbSort = monstre.sorts.Where(s => s.Passif == false && s.Etat == false).Count();
             int NbPassif = monstre.sorts.Where(s => s.Passif == true || s.Etat == true).Count();
@@ -248,7 +274,7 @@ namespace MethodWakfuGuideWriter
             sbSort.Replace("#CODE_HEXA", GetColorElement(sort.ElemDegats));
             if (String.IsNullOrEmpty(sort.ElemDegats))
             {
-                sbSort.Replace("Inflige des dégâts ","");
+                sbSort.Replace("Inflige des dégâts ", "");
             }
             else
             {
@@ -283,10 +309,12 @@ namespace MethodWakfuGuideWriter
                 sbSalle.Replace("diapo1", "diapo" + num);
                 sbSalle.Replace("Num_Salle", GetTermNumSalle(num));
             }
-            sbSalle.Replace("URL_AVEC_VUE_TACTIQUE", salle.UrlAvecVueTactique);
 
-            sbSalle.Replace(defaultSrc, salle.UrlSansVueTactique);
-            sbSalle.Replace("URL_SANS_VUE_TACTIQUE", salle.UrlSansVueTactique);
+
+            sbSalle.Replace("URL_AVEC_VUE_TACTIQUE", $"{UrlFile}_salle_{num}_avec_vt");
+
+            sbSalle.Replace(defaultSrc, $"{UrlFile}_salle_{num}_sans_vt");
+            sbSalle.Replace("URL_SANS_VUE_TACTIQUE", $"{UrlFile}_salle_{num}_sans_vt");
 
             sbSalle.Replace("Xx NomDuMonstre, Xx NomDuMonstre, Xx NomDuMonstre", salle.Compo);
 
@@ -348,10 +376,9 @@ public class Sort
 public class Monstre
 {
     public string Nom { get; set; }
+    public string Archetype { get; set; }
     public bool Boss { get; set; }
-    public string UrlImage { get; set; }
     public List<string> ResistanceBasse { get; set; }
-    public string UrlArchetype { get; set; }
 
     public List<Sort> sorts { get; set; }
 }
@@ -360,8 +387,6 @@ public class Salle
 {
     public bool Boss { get; set; }
     public string Compo { get; set; }
-    public string UrlAvecVueTactique { get; set; }
-    public string UrlSansVueTactique { get; set; }
 }
 
 public class Donjon
@@ -385,15 +410,13 @@ public class Exploit
 public class TemplateDonjon
 {
     public string Nom { get; set; }
+    public string NomDonjonUrl { get; set; }
     public string ZonePrecise { get; set; }
     public string ZonePrincipale { get; set; }
-    public string UrlImageMap { get; set; }
-    public string UrlImageEntree { get; set; }
     public List<Monstre> Monstres { get; set; }
     public Donjon Donjon { get; set; }
     public string Strategie { get; set; }
     public List<Drop> Drops { get; set; }
-    public string CroupierImageUrl { get; set; }
     public Exploit Exploit { get; set; }
 }
 
