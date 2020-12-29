@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
 namespace MethodWakfuGuideWriter
@@ -26,15 +27,15 @@ namespace MethodWakfuGuideWriter
             TemplateDonjon donjonData = JsonConvert.DeserializeObject<TemplateDonjon>(textJson);
 
             //Remplissage du template
-            string nomDuDonjon = donjonData.Nom.ToUpper();
+            string nomDuDonjon = donjonData.Nom;
             sbGlobal.Replace("NOM_DU_DONJON", nomDuDonjon);
-            sbGlobal.Replace("ZONE_PRECISE", donjonData.ZonePrecise.ToUpper());
-            sbGlobal.Replace("ZONE_PRINCIPALE", donjonData.ZonePrincipale.ToUpper());
+            sbGlobal.Replace("ZONE_PRECISE", donjonData.ZonePrecise);
+            sbGlobal.Replace("ZONE_PRINCIPALE", donjonData.ZonePrincipale);
 
             string urlMapDonjon = "https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png";
             if (!String.IsNullOrEmpty(donjonData.UrlImageMap))
             {
-                sbGlobal.Replace(urlMapDonjon.Replace("\\",""), donjonData.UrlImageMap);
+                sbGlobal.Replace(urlMapDonjon.Replace("\\", ""), donjonData.UrlImageMap);
             }
 
             string urlEntreeDonjon = "https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png";
@@ -76,11 +77,23 @@ namespace MethodWakfuGuideWriter
             sbGlobal.Replace("NOM_DE_L_EXPLOIT", donjonData.Exploit.Nom);
             sbGlobal.Replace("TRANCHE_DE_NIVEAU", donjonData.Exploit.TypeJetons);
 
+            //traitement post écriture
+            ProcessPostEcriture(sbGlobal);
+
             //Ecriture et retour du fichier
             string path = Path.GetDirectoryName(args[0])
                + Path.DirectorySeparatorChar
                + nomDuDonjon + ".txt";
             File.WriteAllText(path, sbGlobal.ToString());
+        }
+
+        /// <summary>
+        /// Modifie les derniers éléments un fois l'article écrit au format final
+        /// </summary>
+        /// <param name="sbGlobal"></param>
+        private static void ProcessPostEcriture(StringBuilder sbGlobal)
+        {
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -139,6 +152,8 @@ namespace MethodWakfuGuideWriter
                 sbMonstre.Replace("Nom_du_Monstre", monstre.Nom);
                 //suppression de l'image d'archetype
                 sbMonstre.Replace("https://methodwakfu.com/wp-content/uploads/2020/06/achetype_base.png", "");
+
+                sbMonstre = new StringBuilder(Regex.Replace(sbMonstre.ToString(), @"<!-- TemplateBoss(.+\n)+-->", ""));
             }
             sbMonstre.Replace("Num_Monstre", "2." + num);
 
@@ -147,16 +162,18 @@ namespace MethodWakfuGuideWriter
             int NbSort = monstre.sorts.Where(s => s.Passif == false && s.Etat == false).Count();
             int NbPassif = monstre.sorts.Where(s => s.Passif == true || s.Etat == true).Count();
 
-            sbMonstre.Replace("XXX sorts", $"{NbSort} sort{(NbSort > 1 ? "s" : "")}");
+            string sortReplace = $"{NbSort} sort{(NbSort > 1 ? "s" : "")}";
+            sbMonstre.Replace("XXX sorts", sortReplace);
 
             string pluriel = $"{NbPassif} passif{ (NbPassif > 1 ? "s" : "")}";
 
-            sbMonstre.Replace("XXX passifs", $"{(NbPassif > 0 ? pluriel : "") }");
+            string passifReplace = $"{(NbPassif > 0 ? pluriel : "") }";
+            sbMonstre.Replace("XXX passifs", passifReplace);
 
             string textRes = "et sa plus basse résistance est l'élément <strong>ELEM </strong>[OU] ses plus basses résistances sont les éléments <strong>ELEM </strong>et <strong>ELEM </strong>:";
             if (monstre.ResistanceBasse.Count > 1)
             {
-                sbMonstre.Replace(textRes, $" et ses plus basses résistances sont les éléments {String.Join(" et ", monstre.ResistanceBasse.Select(res => $"<strong><span style=\"color:{GetColorElement(res.ToLower())}\">{res}</span></strong>"))} :");
+                sbMonstre.Replace(textRes, $"et ses plus basses résistances sont les éléments {String.Join(" et ", monstre.ResistanceBasse.Select(res => $"<strong><span style=\"color:{GetColorElement(res.ToLower())}\">{res}</span></strong>"))} :");
             }
             else
             {
@@ -229,7 +246,14 @@ namespace MethodWakfuGuideWriter
             sbSort.Replace("NomDuSort", sort.Nom);
             sbSort.Replace("X PA", sort.Cout);
             sbSort.Replace("#CODE_HEXA", GetColorElement(sort.ElemDegats));
-            sbSort.Replace("ELEM", sort.ElemDegats);
+            if (String.IsNullOrEmpty(sort.ElemDegats))
+            {
+                sbSort.Replace("Inflige des dégâts ","");
+            }
+            else
+            {
+                sbSort.Replace("ELEM", sort.ElemDegats);
+            }
 
             sbSort.Replace("et EFFETS", "et " + sort.Effets);
 

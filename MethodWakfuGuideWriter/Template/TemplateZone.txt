@@ -1,7 +1,7 @@
 ﻿<!-- wp:html -->
 <ul>
 <li>
-« <strong>NomDuSort</strong> » : Sort de zone (<a class="ZONE-PO-TAILLE">ZONE</a> [sur cible] [condition : en ligne/en diagonale] [sans ligne de vue], X-X PO [modifiable]), pour X PA. Inflige des [lourds] dégâts <b><span style="color:#CODE_HEXA">ELEM</span></b> et EFFETS. [Limité à X/cible et à X/tour. OU X tours de relance.]
+« <strong>NomDuSort</strong> » : Sort de zone (<a class="ZONE-PO-TAILLE">ZONE</a> [sur cible] [condition : en ligne/en diagonale] [sans ligne de vue], X-X PO [modifiable]), pour X PA. Inflige des dégâts <b><span style="color:#CODE_HEXA">ELEM</span></b> et EFFETS
 </li>
 </ul>
 <!-- /wp:html -->

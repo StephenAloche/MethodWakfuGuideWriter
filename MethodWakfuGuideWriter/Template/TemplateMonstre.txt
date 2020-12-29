@@ -4,8 +4,12 @@
 <!-- /wp:heading -->
 
 <!-- wp:html -->
-<div style="max-width:35%;float:right; margin-left:10px;text-align:center;"><img src="https://methodwakfu.com/wp-content/uploads/2020/12/PerlouzeNoire_Quartier-maitre.png">
+<div class="wp-block-image"><figure class="alignright"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/fiche_monstre.png" alt=""/></figure></div>
+<!-- TemplateBoss
+<div style="max-width:35%;float:right; margin-left:10px;text-align:center;"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/fiche_monstre.png">
 <div style"clear:both;"=""></div><img src="https://methodwakfu.com/wp-content/uploads/2020/06/achetype_base.png"></div>
+-->
+
 <!-- /wp:html -->
 
 <!-- wp:paragraph -->

@@ -2,7 +2,6 @@
 <ul>
 <li>
 « <strong>NomDuPassifouEtat</strong> » (passif) :</br>
-DECLENCHEMENT :</br>
 </li>
 <ul>
 <li>EFFETS</li>

@@ -1,3 +1,3 @@
 ﻿<!-- wp:list -->
-<ul><li>« <strong>NomDuSort</strong> » : Sort monocible (X-X PO [modifiable] [condition : en ligne/en diagonale] [sans ligne de vue]), pour X PA. Inflige des [lourds] dégâts <strong><span style="color:#CODE_HEXA">ELEM</span></strong> et EFFETS. [Limité à X/cible et à X/tour. <strong>OU</strong> X tours de relance.]</li></ul>
+<ul><li>« <strong>NomDuSort</strong> » : Sort monocible (X-X PO [modifiable] [condition : en ligne/en diagonale] [sans ligne de vue]), pour X PA. Inflige des dégâts <strong><span style="color:#CODE_HEXA">ELEM</span></strong> et EFFETS</li></ul>
 <!-- /wp:list -->
