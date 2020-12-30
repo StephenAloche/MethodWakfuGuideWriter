@@ -1,0 +1,99 @@
+﻿<!-- wp:heading -->
+<h2>4 - EFFETS STASIS</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>À partir des paliers Stasis 31 et 41, les monstres des donjons ainsi que les boss voient leur fonctionnement modifié de part l'ajout de <strong>nouvelles mécaniques</strong> ce qui permet de débloquer certaines récompenses. Plus d'informations sur le système de Stasis et son fonctionnement dans notre <a rel="noreferrer noopener" href="https://methodwakfu.com/donjons-et-boss-ultimes/features-de-donjons/gameplay-stasis/" target="_blank"><strong>guide dédié</strong></a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":3} -->
+<h3>4.1 - Stasis 31</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4>4.1.1 - Effets des monstres</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"right","id":6243,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/effet_stasis.png" alt="" class="wp-image-6243"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="clear: both; margin-bottom: 20px;">&nbsp;</div>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":4} -->
+<h4>4.1.2 - Effets du Boss</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"right","id":6243,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/effet_stasis.png" alt="" class="wp-image-6243"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="clear: both; margin-bottom: 20px;">&nbsp;</div>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":3} -->
+<h3>4.2 - Stasis 41</h3>
+<!-- /wp:heading -->
+
+<!-- wp:heading {"level":4} -->
+<h4>4.2.1 - Effets des monstres</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"right","id":6243,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/effet_stasis.png" alt="" class="wp-image-6243"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="clear: both; margin-bottom: 20px;">&nbsp;</div>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":4} -->
+<h4>4.2.2 - Effets du Boss</h4>
+<!-- /wp:heading -->
+
+<!-- wp:image {"align":"right","id":6243,"sizeSlug":"large"} -->
+<div class="wp-block-image"><figure class="alignright size-large"><img src="https://methodwakfu.com/wp-content/uploads/2020/06/effet_stasis.png" alt="" class="wp-image-6243"/></figure></div>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div style="clear: both; margin-bottom: 20px;">&nbsp;</div>
+<!-- /wp:html -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->

@@ -85,6 +85,8 @@
     <Content Include="method_logo %281%29.ico" />
     <Content Include="Template\TemplateMono.txt" />
     <Content Include="Template\TemplatePassif.txt" />
+    <Content Include="Template\TemplateStasis.txt" />
+    <Content Include="Template\TemplateStele.txt" />
     <Content Include="Template\TemplateZone.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,27 @@
+﻿<!-- wp:heading -->
+<h2><strong>5 – STÈLES</strong></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Plus d'infos sur les stèles et leur fonctionnement <a href="https://methodwakfu.com/donjons-et-boss-ultimes/features-de-donjons/les-steles-de-donjons/" target="_blank" rel="noreferrer noopener"><strong>ici</strong></a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><li><strong>Une stèle ou plus :</strong> <a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank">NOM_DE_SUBLIMATION</a></li><li><strong>Deux stèles ou plus :</strong> <a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank"></a><a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank">NOM_DE_SUBLIMATION</a></li><li><strong>Trois stèles :</strong> <a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank"></a><a rel="noreferrer noopener" href="https://www.wakfu.com/fr/mmorpg/encyclopedie/ressources/SUBLI" target="_blank">NOM_DE_SUBLIMATION</a></li></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p><span style="color:#0366f9" class="has-inline-color"><strong><strong>Stèle 1 : NOM_DE_STELE</strong></strong><br></span>EFFET_DE_STELE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><span style="color:#08bc07" class="has-inline-color"><strong>Stèle 2 : NOM_DE_STELE</strong><br></span>EFFET_DE_STELE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><span style="color:#fa0202" class="has-inline-color"><strong>Stèle 3 : NOM_DE_STELE</strong><br></span>EFFET_DE_STELE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->

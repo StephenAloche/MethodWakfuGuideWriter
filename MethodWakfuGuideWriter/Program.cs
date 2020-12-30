@@ -24,71 +24,75 @@ namespace MethodWakfuGuideWriter
             try
             {
 
-            DateFile = DateTime.Now.ToString("yyyy/MM");
+                DateFile = DateTime.Now.ToString("yyyy/MM");
 
-            //check l'extension
-            string textJson = File.ReadAllText(args[0]);
-            StringBuilder sbGlobal = new StringBuilder();
-            string templateGlobal = Properties.Resources.TemplateGlobal;
-            sbGlobal.Append(templateGlobal);
+                //check l'extension
+                string textJson = File.ReadAllText(args[0]);
+                StringBuilder sbGlobal = new StringBuilder();
+                string templateGlobal = Properties.Resources.TemplateGlobal;
+                sbGlobal.Append(templateGlobal);
 
-            //Exctraction des données Json.
-            DonjonData = JsonConvert.DeserializeObject<TemplateDonjon>(textJson);
-            UrlFile = $"/wp-content/uploads/{DateFile}/{DonjonData.NomDonjonUrl}";
+                //Exctraction des données Json.
+                DonjonData = JsonConvert.DeserializeObject<TemplateDonjon>(textJson);
+                UrlFile = $"/wp-content/uploads/{DateFile}/{DonjonData.NomDonjonUrl}";
 
-            //Remplissage du template
-            string nomDuDonjon = DonjonData.Nom;
-            sbGlobal.Replace("NOM_DU_DONJON", nomDuDonjon);
-            sbGlobal.Replace("ZONE_PRECISE", DonjonData.ZonePrecise);
-            sbGlobal.Replace("ZONE_PRINCIPALE", DonjonData.ZonePrincipale);
+                //Remplissage du template
+                string nomDuDonjon = DonjonData.Nom;
+                sbGlobal.Replace("NOM_DU_DONJON", nomDuDonjon);
+                sbGlobal.Replace("ZONE_PRECISE", DonjonData.ZonePrecise);
+                sbGlobal.Replace("ZONE_PRINCIPALE", DonjonData.ZonePrincipale);
 
-            string urlMapDonjon = "https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png";
-            sbGlobal.Replace(urlMapDonjon.Replace("\\", ""), $"{UrlFile}_map.png");
+                string urlMapDonjon = "https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png";
+                sbGlobal.Replace(urlMapDonjon.Replace("\\", ""), $"{UrlFile}_map.jpg");
 
-            string urlEntreeDonjon = "https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png";
-            sbGlobal.Replace(urlEntreeDonjon.Replace("\\", ""), $"{UrlFile}_map.png");
+                string urlEntreeDonjon = "https://methodwakfu.com/wp-content/uploads/2020/11/petit_cadre-1024x291.png";
+                sbGlobal.Replace(urlEntreeDonjon.Replace("\\", ""), $"{UrlFile}_map.jpg");
 
-            //partie monstre
-            StringBuilder sbMonstre = new StringBuilder();
-            int i = 1; //increment de numerotation dans le template
-            foreach (Monstre monstre in DonjonData.Monstres)
-            {
-                //l'ajout des sorts se fait lors de la création du monstre
-                string monstreString = CreateMonstre(monstre, i);
-                sbMonstre.Append(monstreString);
-                i++;
-            }
-            //on ajoute tout les monstres
-            sbGlobal.Replace("[TemplateMonstre]", sbMonstre.ToString());
+                //partie monstre
+                StringBuilder sbMonstre = new StringBuilder();
+                int i = 1; //increment de numerotation dans le template
+                foreach (Monstre monstre in DonjonData.Monstres)
+                {
+                    //l'ajout des sorts se fait lors de la création du monstre
+                    string monstreString = CreateMonstre(monstre, i);
+                    sbMonstre.Append(monstreString);
+                    i++;
+                }
+                //on ajoute tout les monstres
+                sbGlobal.Replace("[TemplateMonstre]", sbMonstre.ToString());
 
-            //partie Salle
+                //partie Salle
 
-            StringBuilder sbSalle = new StringBuilder();
-            i = 1; //increment de numerotation dans le template            
-            foreach (Salle Salle in DonjonData.Donjon.Salles)
-            {
-                string SalleString = CreateSalle(Salle, i);
-                sbSalle.Append(SalleString);
-                i++;
-            }
-            //on ajoute toutes les salles
-            sbGlobal.Replace("[TemplateSalle]", sbSalle.ToString());
+                StringBuilder sbSalle = new StringBuilder();
+                i = 1; //increment de numerotation dans le template            
+                foreach (Salle Salle in DonjonData.Donjon.Salles)
+                {
+                    string SalleString = CreateSalle(Salle, i);
+                    sbSalle.Append(SalleString);
+                    i++;
+                }
+                //on ajoute toutes les salles
+                sbGlobal.Replace("[TemplateSalle]", sbSalle.ToString());
 
-            //partie Strategie
-            //partie Drop
-            //partie Croupier
-            //partie Exploit
-            sbGlobal.Replace("NOM_DE_L_EXPLOIT", DonjonData.Exploit.Nom);
-            sbGlobal.Replace("TRANCHE_DE_NIVEAU", DonjonData.Exploit.TypeJetons);
+                //partie stasis
+                sbGlobal.Replace("[TemplateStasis]", "");
+                //partie stele
+                sbGlobal.Replace("[TemplateStele]", "");
+                //partie Strategie
+                //partie Drop
+                //partie Croupier
+                //partie Exploit
+                sbGlobal.Replace("NOM_DE_L_EXPLOIT", DonjonData.Exploit.Nom);
+                sbGlobal.Replace("TRANCHE_DE_NIVEAU", DonjonData.Exploit.TypeJetons);
 
-            //traitement post écriture
-            ProcessPostEcriture(sbGlobal);
+                //traitement post écriture
+                ProcessPostEcriture(sbGlobal);
 
-            //Ecriture et retour du fichier
-            string path = Path.GetDirectoryName(args[0])
-               + Path.DirectorySeparatorChar
-               + nomDuDonjon + ".txt";
-            File.WriteAllText(path, sbGlobal.ToString());
+                //Ecriture et retour du fichier
+                string path = Path.GetDirectoryName(args[0])
+                   + Path.DirectorySeparatorChar
+                   + nomDuDonjon + ".txt";
+                File.WriteAllText(path, sbGlobal.ToString());
             }
             catch (Exception ex)
             {
@@ -174,7 +178,11 @@ namespace MethodWakfuGuideWriter
                     case "invocateur":
                         urlArchetype = "/wp-content/uploads/2019/03/invocateur_archetype.png";
                         break;
-                    default:
+                    case "distance":
+                        urlArchetype = "/wp-content/uploads/2019/03/distance_archetype.png";
+                        break;
+                    case "berseker":
+                        default:
                         break;
                 }
                 sbMonstre.Replace("https://methodwakfu.com/wp-content/uploads/2020/06/achetype_base.png", urlArchetype);
@@ -303,18 +311,24 @@ namespace MethodWakfuGuideWriter
             {
                 sbSalle.Replace("diapo1", "diapoboss");
                 sbSalle.Replace("Num_Salle", GetTermNumSalle(0));
+
+
+                sbSalle.Replace("URL_AVEC_VUE_TACTIQUE", $"{UrlFile}_salle_boss_avec_vt.jpg");
+
+                sbSalle.Replace(defaultSrc, $"{UrlFile}_salle_boss_sans_vt.jpg");
+                sbSalle.Replace("URL_SANS_VUE_TACTIQUE", $"{UrlFile}_salle_boss_sans_vt.jpg");
             }
             else
             {
                 sbSalle.Replace("diapo1", "diapo" + num);
                 sbSalle.Replace("Num_Salle", GetTermNumSalle(num));
+
+                sbSalle.Replace("URL_AVEC_VUE_TACTIQUE", $"{UrlFile}_salle_{num}_avec_vt.jpg");
+
+                sbSalle.Replace(defaultSrc, $"{UrlFile}_salle_{num}_sans_vt.jpg");
+                sbSalle.Replace("URL_SANS_VUE_TACTIQUE", $"{UrlFile}_salle_{num}_sans_vt.jpg");
             }
 
-
-            sbSalle.Replace("URL_AVEC_VUE_TACTIQUE", $"{UrlFile}_salle_{num}_avec_vt");
-
-            sbSalle.Replace(defaultSrc, $"{UrlFile}_salle_{num}_sans_vt");
-            sbSalle.Replace("URL_SANS_VUE_TACTIQUE", $"{UrlFile}_salle_{num}_sans_vt");
 
             sbSalle.Replace("Xx NomDuMonstre, Xx NomDuMonstre, Xx NomDuMonstre", salle.Compo);
 
